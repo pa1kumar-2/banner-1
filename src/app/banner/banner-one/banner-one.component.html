@@ -1,0 +1,195 @@
+<select (change)="changeBanner($event)">
+  <option *ngFor="let banner of banners">
+    {{ banner }}
+  </option>
+</select>
+
+<form [formGroup]="bannerForm">
+  <div>Banner Name</div>
+  <input type="text" formControlName="name" placeholder="NEW ARRIVAL" />
+  <div>Background image</div>
+  <input
+    type="text"
+    formControlName="background_image_url"
+    placeholder="https://picsum.photos/200/300"
+  />
+  <div>Product Name</div>
+  <input
+    type="text"
+    formControlName="product_name"
+    placeholder=".5 INCH PORTABLE HD MONITOR DC-550 PRO"
+  />
+  <div>Product Image</div>
+  <input
+    type="text"
+    formControlName="product_image_url"
+    placeholder="https://picsum.photos/200/300"
+  />
+  <div>Logo</div>
+  <input
+    type="text"
+    formControlName="logo_url"
+    placeholder="https://picsum.photos/200/300"
+  />
+  <div>Price</div>
+  <input type="text" formControlName="price" placeholder="$18,890" />
+  <div>Discounted Price</div>
+  <input type="text" formControlName="selling_price" placeholder="$18,000" />
+  <div>Button Text</div>
+  <input type="text" formControlName="button_text" placeholder="SHOP NOW" />
+  <div>Off Percentage</div>
+  <input type="text" formControlName="discount_percentage" placeholder="12" />
+  <div></div>
+</form>
+
+<ng-container [ngSwitch]="viewBanner">
+  <ng-container *ngSwitchCase="'banner-1'">
+    <!-- desktop -->
+    <section class="banner-1 desktop-banner-container">
+      <img
+        class="background-image"
+        [src]="bannerForm.controls.background_image_url.value"
+      />
+
+      <div class="banner-name">
+        <h1>{{ bannerForm.controls.name.value }}</h1>
+      </div>
+
+      <div class="content-container">
+        <div class="left-section">
+          <img
+            class="banner-image"
+            [src]="bannerForm.controls.product_image_url.value"
+          />
+        </div>
+        <div class="right-section">
+          <img
+            class="company-logo"
+            [src]="bannerForm.controls.logo_url.value"
+          />
+          <h1 class="product-name">
+            {{ bannerForm.controls.product_name.value }}
+          </h1>
+          <div class="product-cost">
+            <span class="discounted-price">{{
+              bannerForm.controls.selling_price.value
+            }}</span>
+            <span class="actual-price">{{
+              bannerForm.controls.price.value
+            }}</span>
+          </div>
+          <button class="shop-btn">
+            {{ bannerForm.controls.button_text.value }}
+          </button>
+
+          <div class="discount-offer">
+            {{ bannerForm.controls.discount_percentage.value }} % OFF
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- mobile -->
+    <section class="banner-1 mobile-banner-container">
+      <img
+        class="background-image"
+        src="../assets/images/creative-mobile-bg-1.png"
+      />
+
+      <div class="banner-name"><h1>NEW ARRIVAL</h1></div>
+
+      <div class="content-container">
+        <img
+          class="company-logo"
+          src="https://assets.hyperinvento.com/hyperinventory_admin/assets/images/creative-template-images/VILTROX-logo.png"
+        />
+        <h1 class="product-name">5.5 INCH PORTABLE HD MONITOR DC-550 PRO</h1>
+        <div class="product-cost">
+          <span class="discounted-price">$18,890</span>
+          <span class="actual-price">$18,890</span>
+        </div>
+        <button class="shop-btn">SHOP NOW</button>
+
+        <div class="banner-image">
+          <img
+            src="https://assets.hyperinvento.com/hyperinventory_admin/assets/images/creative-template-images/VILTROX+5.5+INCH+Portable+HD+Monitor+DC-550+Pro.png"
+          />
+        </div>
+      </div>
+
+      <div class="discount-offer">13% OFF</div>
+    </section>
+  </ng-container>
+
+  <ng-container *ngSwitchCase="'banner-2'">
+    <!-- desktop -->
+    <section class="banner-2 desktop-banner-container">
+      <img
+        class="background-image"
+        src="../assets/images/sony FX3 Full-Frame Cinema Camera 1520x380.png"
+      />
+
+      <div class="banner-name">
+        <h1>
+          New Arrival
+          <img
+            src="https://assets.hyperinvento.com/www_learnim_com/assets/learnim-assets/images/carousel-right-arrow.svg"
+          />
+          <img
+            src="https://assets.hyperinvento.com/www_learnim_com/assets/learnim-assets/images/carousel-right-arrow.svg"
+            alt=""
+          />
+        </h1>
+      </div>
+
+      <div class="content-container">
+        <img
+          class="company-logo"
+          src="../assets/images/sony FX3 Full-Frame Cinema Camera (560 x 380 px) 2 (1).png"
+        />
+        <h1 class="product-name">FX3 Full-Frame Cinema Camera</h1>
+        <div class="product-cost">
+          <span class="discounted-price">$3,68,000</span>
+          <span class="actual-price">$3,99,990</span>
+        </div>
+        <button class="shop-btn">SHOP NOW</button>
+      </div>
+
+      <div class="discount-offer">
+        8% <br />
+        OFF
+      </div>
+    </section>
+
+    <!-- mobile -->
+    <section class="banner-2 mobile-banner-container">
+      <img
+        class="background-image"
+        src="../assets/images/creative-mobile-bg-1.png"
+      />
+
+      <div class="banner-name"><h1>NEW ARRIVAL</h1></div>
+
+      <div class="content-container">
+        <img
+          class="company-logo"
+          src="https://assets.hyperinvento.com/hyperinventory_admin/assets/images/creative-template-images/VILTROX-logo.png"
+        />
+        <h1 class="product-name">FX3 Full-Frame Cinema Camera</h1>
+        <div class="product-cost">
+          <span class="discounted-price">$3,68,000</span>
+          <span class="actual-price">$3,99,990</span>
+        </div>
+        <button class="shop-btn">SHOP NOW</button>
+
+        <div class="banner-image">
+          <img
+            src="https://assets.hyperinvento.com/hyperinventory_admin/assets/images/creative-template-images/VILTROX+5.5+INCH+Portable+HD+Monitor+DC-550+Pro.png"
+          />
+        </div>
+      </div>
+
+      <div class="discount-offer">8% OFF</div>
+    </section>
+  </ng-container>
+</ng-container>
