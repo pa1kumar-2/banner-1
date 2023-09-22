@@ -6,13 +6,15 @@
 
 <form [formGroup]="bannerForm">
   <div>Banner Name</div>
-  <input type="text" formControlName="name" placeholder="NEW ARRIVAL" />
-  <div>Background image</div>
+  <input type="text" formControlName="badge" placeholder="NEW ARRIVAL" />
+  <div>Desktop Background image</div>
   <input
     type="text"
-    formControlName="background_image_url"
+    formControlName="desktop_background_image_url"
     placeholder="https://picsum.photos/200/300"
   />
+  <div>Mobile Background image</div>
+  <input type="text" formControlName="mobile_background_image_url" />
   <div>Product Name</div>
   <input
     type="text"
@@ -45,14 +47,14 @@
 <ng-container [ngSwitch]="viewBanner">
   <ng-container *ngSwitchCase="'banner-1'">
     <!-- desktop -->
-    <section class="banner-1 desktop-banner-container">
+    <section class="banner-1 desktop-banner-container" id="desktop-banner-1">
       <img
         class="background-image"
-        [src]="bannerForm.controls.background_image_url.value"
+        [src]="bannerForm.controls.desktop_background_image_url.value"
       />
 
       <div class="banner-name">
-        <h1>{{ bannerForm.controls.name.value }}</h1>
+        <h1>{{ bannerForm.controls.badge.value }}</h1>
       </div>
 
       <div class="content-container">
@@ -90,106 +92,119 @@
     </section>
 
     <!-- mobile -->
-    <section class="banner-1 mobile-banner-container">
+    <section class="banner-1 mobile-banner-container" id="mobile-banner-1">
       <img
         class="background-image"
-        src="../assets/images/creative-mobile-bg-1.png"
+        [src]="bannerForm.controls.mobile_background_image_url.value"
       />
 
-      <div class="banner-name"><h1>NEW ARRIVAL</h1></div>
+      <div class="banner-name">
+        <h1>{{ bannerForm.controls.badge.value }}</h1>
+      </div>
 
       <div class="content-container">
-        <img
-          class="company-logo"
-          src="https://assets.hyperinvento.com/hyperinventory_admin/assets/images/creative-template-images/VILTROX-logo.png"
-        />
-        <h1 class="product-name">5.5 INCH PORTABLE HD MONITOR DC-550 PRO</h1>
+        <img class="company-logo" [src]="bannerForm.controls.logo_url.value" />
+        <h1 class="product-name">
+          {{ bannerForm.controls.product_name.value }}
+        </h1>
         <div class="product-cost">
-          <span class="discounted-price">$18,890</span>
-          <span class="actual-price">$18,890</span>
+          <span class="discounted-price">{{
+            bannerForm.controls.selling_price.value
+          }}</span>
+          <span class="actual-price">{{
+            bannerForm.controls.price.value
+          }}</span>
         </div>
-        <button class="shop-btn">SHOP NOW</button>
+        <button class="shop-btn">
+          {{ bannerForm.controls.button_text.value }}
+        </button>
 
         <div class="banner-image">
-          <img
-            src="https://assets.hyperinvento.com/hyperinventory_admin/assets/images/creative-template-images/VILTROX+5.5+INCH+Portable+HD+Monitor+DC-550+Pro.png"
-          />
+          <img [src]="bannerForm.controls.product_image_url.value" />
         </div>
       </div>
 
-      <div class="discount-offer">13% OFF</div>
+      <div class="discount-offer">
+        {{ bannerForm.controls.discount_percentage.value }}% OFF
+      </div>
     </section>
   </ng-container>
 
   <ng-container *ngSwitchCase="'banner-2'">
     <!-- desktop -->
-    <section class="banner-2 desktop-banner-container">
+    <section class="banner-2 desktop-banner-container" id="desktop-banner-1">
       <img
         class="background-image"
-        src="../assets/images/sony FX3 Full-Frame Cinema Camera 1520x380.png"
+        [src]="bannerForm.controls.desktop_background_image_url.value"
       />
 
       <div class="banner-name">
         <h1>
-          New Arrival
-          <img
-            src="https://assets.hyperinvento.com/www_learnim_com/assets/learnim-assets/images/carousel-right-arrow.svg"
-          />
-          <img
-            src="https://assets.hyperinvento.com/www_learnim_com/assets/learnim-assets/images/carousel-right-arrow.svg"
-            alt=""
-          />
+          {{ bannerForm.controls.badge.value }}
+          <img [src]="bannerForm.controls.product_image_url.value" />
         </h1>
       </div>
 
       <div class="content-container">
-        <img
-          class="company-logo"
-          src="../assets/images/sony FX3 Full-Frame Cinema Camera (560 x 380 px) 2 (1).png"
-        />
-        <h1 class="product-name">FX3 Full-Frame Cinema Camera</h1>
+        <img class="company-logo" [src]="bannerForm.controls.logo_url.value" />
+        <h1 class="product-name">
+          {{ bannerForm.controls.product_name.value }}
+        </h1>
         <div class="product-cost">
-          <span class="discounted-price">$3,68,000</span>
-          <span class="actual-price">$3,99,990</span>
+          <span class="discounted-price">{{
+            bannerForm.controls.selling_price.value
+          }}</span>
+          <span class="actual-price">{{
+            bannerForm.controls.price.value
+          }}</span>
         </div>
-        <button class="shop-btn">SHOP NOW</button>
+        <button class="shop-btn">
+          {{ bannerForm.controls.button_text.value }}
+        </button>
       </div>
 
       <div class="discount-offer">
-        8% <br />
+        {{ bannerForm.controls.discount_percentage.value }}% <br />
         OFF
       </div>
     </section>
 
     <!-- mobile -->
-    <section class="banner-2 mobile-banner-container">
+    <section class="banner-2 mobile-banner-container" id="mobile-banner-1">
       <img
         class="background-image"
-        src="../assets/images/creative-mobile-bg-1.png"
+        [src]="bannerForm.controls.mobile_background_image_url.value"
       />
 
-      <div class="banner-name"><h1>NEW ARRIVAL</h1></div>
+      <div class="banner-name">
+        <h1>{{ bannerForm.controls.badge.value }}</h1>
+      </div>
 
       <div class="content-container">
-        <img
-          class="company-logo"
-          src="https://assets.hyperinvento.com/hyperinventory_admin/assets/images/creative-template-images/VILTROX-logo.png"
-        />
-        <h1 class="product-name">FX3 Full-Frame Cinema Camera</h1>
+        <img class="company-logo" [src]="bannerForm.controls.logo_url.value" />
+        <h1 class="product-name">
+          {{ bannerForm.controls.product_name.value }}
+        </h1>
         <div class="product-cost">
-          <span class="discounted-price">$3,68,000</span>
-          <span class="actual-price">$3,99,990</span>
+          <span class="discounted-price">{{
+            bannerForm.controls.selling_price.value
+          }}</span>
+          <span class="actual-price">{{
+            bannerForm.controls.price.value
+          }}</span>
         </div>
-        <button class="shop-btn">SHOP NOW</button>
+        <button class="shop-btn">
+          {{ bannerForm.controls.button_text.value }}
+        </button>
 
         <div class="banner-image">
-          <img
-            src="https://assets.hyperinvento.com/hyperinventory_admin/assets/images/creative-template-images/VILTROX+5.5+INCH+Portable+HD+Monitor+DC-550+Pro.png"
-          />
+          <img [src]="bannerForm.controls.product_image_url.value" />
         </div>
       </div>
 
-      <div class="discount-offer">8% OFF</div>
+      <div class="discount-offer">
+        {{ bannerForm.controls.discount_percentage.value }}% OFF
+      </div>
     </section>
   </ng-container>
 </ng-container>

@@ -23,10 +23,11 @@ export class BannerOneComponent {
 
 
   bannerForm = this.formBuilder.group({
-    name: ['NEW ARRIVAL'],
+    badge: ['NEW ARRIVAL'],
     product_name: ['.5 INCH PORTABLE HD MONITOR DC-550 PRO'],
 
-    background_image_url: ['assets/images/bg-cover.png'],
+    desktop_background_image_url: ['assets/images/bg-cover.png'],
+    mobile_background_image_url: ['assets/images/bg-cover.png'],
     product_image_url: ['https://assets.hyperinvento.com/hyperinventory_admin/assets/images/creative-template-images/VILTROX+5.5+INCH+Portable+HD+Monitor+DC-550+Pro.png'],
     logo_url: ['https://assets.hyperinvento.com/hyperinventory_admin/assets/images/creative-template-images/VILTROX-logo.png'],
     price: ['$18,890'],
