@@ -47,7 +47,7 @@
 <ng-container [ngSwitch]="viewBanner">
   <ng-container *ngSwitchCase="'banner-1'">
     <!-- desktop -->
-    <section class="banner-1 desktop-banner-container" id="desktop-banner-1">
+    <section class="banner-1 desktop-banner-container" id="desktopBanner">
       <img
         class="background-image"
         [src]="bannerForm.controls.desktop_background_image_url.value"
@@ -91,8 +91,9 @@
       </div>
     </section>
 
+    <button (click)="createBanner(DeviceType.Desktop)">Capture</button>
     <!-- mobile -->
-    <section class="banner-1 mobile-banner-container" id="mobile-banner-1">
+    <section class="banner-1 mobile-banner-container" id="mobileBanner">
       <img
         class="background-image"
         [src]="bannerForm.controls.mobile_background_image_url.value"
@@ -128,11 +129,13 @@
         {{ bannerForm.controls.discount_percentage.value }}% OFF
       </div>
     </section>
+
+    <button (click)="createBanner(DeviceType.Mobile)">Capture</button>
   </ng-container>
 
   <ng-container *ngSwitchCase="'banner-2'">
     <!-- desktop -->
-    <section class="banner-2 desktop-banner-container" id="desktop-banner-1">
+    <section class="banner-2 desktop-banner-container" id="desktopBanner">
       <img
         class="background-image"
         [src]="bannerForm.controls.desktop_background_image_url.value"
@@ -168,23 +171,26 @@
         OFF
       </div>
     </section>
+    <button (click)="createBanner(DeviceType.Desktop)">Capture</button>
 
     <!-- mobile -->
-    <section class="banner-2 mobile-banner-container" id="mobile-banner-1">
+    <section class="banner-2 mobile-banner-container" id="mobileBanner">
       <img
         class="background-image"
         [src]="bannerForm.controls.mobile_background_image_url.value"
       />
 
       <div class="banner-name">
-        <h1>{{ bannerForm.controls.badge.value }}</h1>
+        <h1>
+          {{ bannerForm.controls.badge.value }}
+          <img src="../assets/images/double-right-arrow-icon.png" />
+        </h1>
       </div>
 
       <div class="content-container">
         <img class="company-logo" [src]="bannerForm.controls.logo_url.value" />
-        <h1 class="product-name">
-          {{ bannerForm.controls.product_name.value }}
-        </h1>
+        <h1 class="product-name">FX3 Full-Frame Cinema Camera</h1>
+
         <div class="product-cost">
           <span class="discounted-price">{{
             bannerForm.controls.selling_price.value
@@ -196,15 +202,16 @@
         <button class="shop-btn">
           {{ bannerForm.controls.button_text.value }}
         </button>
+      </div>
 
-        <div class="banner-image">
-          <img [src]="bannerForm.controls.product_image_url.value" />
-        </div>
+      <div class="banner-image">
+        <img [src]="bannerForm.controls.product_image_url.value" />
       </div>
 
       <div class="discount-offer">
         {{ bannerForm.controls.discount_percentage.value }}% OFF
       </div>
     </section>
+    <button (click)="createBanner(DeviceType.Mobile)">Capture</button>
   </ng-container>
 </ng-container>

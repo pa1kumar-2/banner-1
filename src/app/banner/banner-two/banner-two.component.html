@@ -1,0 +1,140 @@
+<select (change)="changeBanner($event)">
+  <option *ngFor="let banner of banners">
+    {{ banner }}
+  </option>
+</select>
+
+<ng-container [ngSwitch]="viewBanner">
+  <ng-container *ngSwitchCase="'banner-1'">
+    <!-- desktop -->
+    <section class="banner-1 desktop-banner-container">
+      <img class="background-image" src="assets/images/bg-cover.png" />
+
+      <div class="banner-name"><h1>NEW ARRIVAL</h1></div>
+
+      <div class="content-container">
+        <div class="left-section">
+          <img
+            class="banner-image"
+            src="https://assets.hyperinvento.com/hyperinventory_admin/assets/images/creative-template-images/VILTROX+5.5+INCH+Portable+HD+Monitor+DC-550+Pro.png"
+          />
+        </div>
+        <div class="right-section">
+          <img
+            class="company-logo"
+            src="https://assets.hyperinvento.com/hyperinventory_admin/assets/images/creative-template-images/VILTROX-logo.png"
+          />
+          <h1 class="product-name">5.5 INCH PORTABLE HD MONITOR DC-550 PRO</h1>
+          <div class="product-cost">
+            <span class="discounted-price">$18,890</span>
+            <span class="actual-price">$18,890</span>
+          </div>
+          <button class="shop-btn">SHOP NOW</button>
+
+          <div class="discount-offer">13% OFF</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- mobile -->
+    <section class="banner-1 mobile-banner-container">
+      <img
+        class="background-image"
+        src="../assets/images/creative-mobile-bg-1.png"
+      />
+
+      <div class="banner-name"><h1>NEW ARRIVAL</h1></div>
+
+      <div class="content-container">
+        <img
+          class="company-logo"
+          src="https://assets.hyperinvento.com/hyperinventory_admin/assets/images/creative-template-images/VILTROX-logo.png"
+        />
+        <h1 class="product-name">5.5 INCH PORTABLE HD MONITOR DC-550 PRO</h1>
+        <div class="product-cost">
+          <span class="discounted-price">$18,890</span>
+          <span class="actual-price">$18,890</span>
+        </div>
+        <button class="shop-btn">SHOP NOW</button>
+
+        <div class="banner-image">
+          <img
+            src="https://assets.hyperinvento.com/hyperinventory_admin/assets/images/creative-template-images/VILTROX+5.5+INCH+Portable+HD+Monitor+DC-550+Pro.png"
+          />
+        </div>
+      </div>
+
+      <div class="discount-offer">13% OFF</div>
+    </section>
+  </ng-container>
+
+  <ng-container *ngSwitchCase="'banner-2'">
+    <!-- desktop -->
+    <section class="banner-2 desktop-banner-container">
+      <img
+        class="background-image"
+        src="../assets/images/sony FX3 Full-Frame Cinema Camera 1520x380.png"
+      />
+
+      <div class="banner-name">
+        <h1>
+          New Arrival
+          <img src="../assets/images/double-right-arrow-icon.png" />
+        </h1>
+      </div>
+
+      <div class="content-container">
+        <img
+          class="company-logo"
+          src="../assets/images/sony FX3 Full-Frame Cinema Camera (560 x 380 px) 2 (1).png"
+        />
+        <h1 class="product-name">FX3 Full-Frame Cinema Camera</h1>
+        <div class="product-cost">
+          <span class="discounted-price">$3,68,000</span>
+          <span class="actual-price">$3,99,990</span>
+        </div>
+        <button class="shop-btn">SHOP NOW</button>
+      </div>
+
+      <div class="discount-offer">
+        8% <br />
+        OFF
+      </div>
+    </section>
+
+    <!-- mobile -->
+    <section class="banner-2 mobile-banner-container">
+      <img
+        class="background-image"
+        src="../assets/images/sony FX3 Full-Frame Cinema Camera (560 x 380 px) 2.png"
+      />
+
+      <div class="banner-name">
+        <h1>
+          NEW ARRIVAL
+          <img src="../assets/images/double-right-arrow-icon.png" />
+        </h1>
+      </div>
+
+      <div class="content-container">
+        <img
+          class="company-logo"
+          src="../assets/images/sony FX3 Full-Frame Cinema Camera (560 x 380 px) 2 (1).png"
+        />
+        <h1 class="product-name">FX3 Full-Frame Cinema Camera</h1>
+
+        <div class="product-cost">
+          <span class="discounted-price">$3,68,000</span>
+          <span class="actual-price">$3,99,990</span>
+        </div>
+        <button class="shop-btn">SHOP NOW</button>
+      </div>
+
+      <div class="banner-image">
+        <img src="../assets/images/sony FX3 Full-Frame Cinema Camera .png" />
+      </div>
+
+      <div class="discount-offer">8% OFF</div>
+    </section>
+  </ng-container>
+</ng-container>
