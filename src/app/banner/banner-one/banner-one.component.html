@@ -172,6 +172,7 @@
       </div>
     </section>
     <button (click)="createBanner(DeviceType.Desktop)">Capture</button>
+    <button (click)="downloadDesktopImage()">Download</button>
 
     <!-- mobile -->
     <section class="banner-2 mobile-banner-container" id="mobileBanner">
@@ -213,5 +214,9 @@
       </div>
     </section>
     <button (click)="createBanner(DeviceType.Mobile)">Capture</button>
+    <button (click)="downloadMobileImage()">Download</button>
   </ng-container>
 </ng-container>
+
+<h2 *ngIf="capturedImage">Captured Image</h2>
+<img [src]="capturedImage" />

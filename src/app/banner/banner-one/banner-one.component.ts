@@ -1,4 +1,4 @@
-import { Component, ElementRef, ViewChild } from '@angular/core';
+import { Component } from '@angular/core';
 import { FormBuilder } from '@angular/forms';
 import html2canvas from 'html2canvas';
 // declare let html2canvas: any;
@@ -25,6 +25,7 @@ export class BannerOneComponent {
     "banner-5"
   ]
 
+  capturedImage: any;
   constructor(private formBuilder: FormBuilder) { }
 
   bannerForm = this.formBuilder.group({
@@ -50,11 +51,10 @@ export class BannerOneComponent {
     if (deviceType === DeviceType.Desktop && desktopElement) {
 
       html2canvas(desktopElement, {
+
         allowTaint: true, // Allow cross-origin images to taint the canvas
         useCORS: false, // Attempt to load images from a server using CORS
-      }).then(function (canvas) {
-        document.body.appendChild(canvas);
-      });
+      }).then((canvas) => document.body.appendChild(canvas));
 
     }
     if (deviceType === DeviceType.Mobile && mobileElement) {
@@ -62,13 +62,18 @@ export class BannerOneComponent {
       html2canvas(mobileElement, {
         allowTaint: true, // Allow cross-origin images to taint the canvas
         useCORS: false, // Attempt to load images from a server using CORS
-      }).then(function (canvas) {
-        document.body.appendChild(canvas);
-      });
+      }).then((canvas) =>
+        document.body.appendChild(canvas)
 
-
+      );
     }
+  }
 
+  downloadMobileImage() {
+
+  }
+
+  downloadDesktopImage() {
 
   }
 
