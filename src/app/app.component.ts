@@ -6,7 +6,7 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  viewBanner: string = 'banner-3';
+  viewBanner: string = 'banner-5';
 
   banners: string[] = [
     "banner-1",
